@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>سامانه انبارداری هلال احمر | کهگیلویه</title>
+  <meta name="description" content="نرم‌افزار دسکتاپ آفلاین مدیریت انبار امدادی — جمعیت هلال احمر شهرستان کهگیلویه. دموی رابط کاربری، بدون انتشار سورس." />
+  <meta property="og:title" content="سامانه انبارداری هلال احمر کهگیلویه" />
+  <meta property="og:description" content="مدیریت انبار امدادی — دسکتاپ آفلاین، تقویم شمسی، گزارش PDF/Excel" />
+  <meta property="og:image" content="assets/banner.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red: #e31e24;
+      --bg: #0b0b0e;
+      --card: #15151c;
+      --text: #f3f3f7;
+      --muted: #9a9aa8;
+      --line: rgba(255,255,255,0.08);
+      --font: "Vazirmatn", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: var(--font); background: var(--bg); color: var(--text);
+      line-height: 1.7;
+    }
+    a { color: #ffb4b6; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { width: min(1120px, 92%); margin: 0 auto; }
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(11,11,14,0.75);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav .wrap {
+      display: flex; justify-content: space-between; align-items: center;
+      height: 64px;
+    }
+    .logo { display: flex; gap: 10px; align-items: center; font-weight: 800; }
+    .logo i {
+      width: 34px; height: 34px; border-radius: 10px;
+      background: linear-gradient(145deg, #e31e24, #8f0d12);
+      display: grid; place-items: center; font-style: normal;
+    }
+    .nav-links { display: flex; gap: 18px; align-items: center; font-size: 14px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 18px; border-radius: 12px; font-weight: 700; font-size: 14px;
+      border: 0; cursor: pointer; text-decoration: none !important;
+    }
+    .btn-primary { background: var(--red); color: #fff; }
+    .btn-primary:hover { filter: brightness(1.08); }
+    .btn-ghost {
+      background: transparent; color: var(--text);
+      border: 1px solid var(--line);
+    }
+    .hero {
+      padding: 72px 0 40px;
+      background:
+        radial-gradient(900px 420px at 80% 0%, rgba(227,30,36,0.22), transparent 60%),
+        radial-gradient(700px 360px at 10% 20%, rgba(255,255,255,0.04), transparent 55%);
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 40px; align-items: center;
+    }
+    .badge {
+      display: inline-flex; gap: 8px; align-items: center;
+      padding: 6px 12px; border-radius: 999px; font-size: 12px; font-weight: 600;
+      background: rgba(227,30,36,0.12); color: #ffb4b6;
+      border: 1px solid rgba(227,30,36,0.35);
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(28px, 4vw, 44px); line-height: 1.25; margin: 0 0 14px; font-weight: 800;
+    }
+    .lead { color: var(--muted); font-size: 16.5px; margin: 0 0 24px; max-width: 36em; }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 22px; }
+    .lock-note {
+      font-size: 13px; color: var(--muted);
+      padding: 12px 14px; border-radius: 12px;
+      border: 1px solid var(--line); background: rgba(255,255,255,0.02);
+      max-width: 38em;
+    }
+    .hero-visual {
+      border-radius: 20px; overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+      position: relative;
+    }
+    .hero-visual img { width: 100%; display: block; }
+    .hero-visual::after {
+      content: "UI Preview";
+      position: absolute; top: 14px; left: 14px;
+      background: rgba(0,0,0,0.55); color: #fff;
+      font-size: 11px; padding: 4px 10px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    section { padding: 56px 0; }
+    .section-title { font-size: 26px; margin: 0 0 8px; font-weight: 800; }
+    .section-sub { color: var(--muted); margin: 0 0 28px; }
+    .features {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    }
+    .feat {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 16px; padding: 20px;
+      transition: 0.2s ease;
+    }
+    .feat:hover { border-color: rgba(227,30,36,0.4); transform: translateY(-2px); }
+    .feat .ico {
+      width: 42px; height: 42px; border-radius: 12px;
+      background: rgba(227,30,36,0.12); color: #ff8a8e;
+      display: grid; place-items: center; margin-bottom: 12px; font-size: 18px;
+    }
+    .feat h3 { margin: 0 0 8px; font-size: 16px; }
+    .feat p { margin: 0; color: var(--muted); font-size: 13.5px; }
+    .stack {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+    }
+    .panel {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 18px; padding: 24px;
+    }
+    .panel h3 { margin-top: 0; }
+    .panel ul { margin: 0; padding: 0 18px 0 0; color: var(--muted); }
+    .panel li { margin-bottom: 8px; }
+    .mock {
+      border-radius: 18px; overflow: hidden; border: 1px solid var(--line);
+      margin-top: 18px;
+    }
+    .mock img { width: 100%; display: block; }
+    .contact {
+      background: linear-gradient(135deg, rgba(227,30,36,0.18), rgba(255,255,255,0.02));
+      border: 1px solid rgba(227,30,36,0.3);
+      border-radius: 20px; padding: 28px;
+      display: flex; justify-content: space-between; gap: 20px; align-items: center; flex-wrap: wrap;
+    }
+    footer {
+      border-top: 1px solid var(--line); padding: 28px 0 40px;
+      color: var(--muted); font-size: 13px;
+    }
+    footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    @media (max-width: 900px) {
+      .hero-grid, .features, .stack { grid-template-columns: 1fr; }
+      .nav-links a:not(.btn) { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <div class="logo"><i>✚</i> هلال‌انبار</div>
+      <div class="nav-links">
+        <a href="#features">قابلیت‌ها</a>
+        <a href="#security">امنیت سورس</a>
+        <a href="#stack">فناوری</a>
+        <a class="btn btn-primary" href="demo/">دموی تعاملی</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="badge">🔒 سورس خصوصی · فقط دمو عمومی</div>
+        <h1>سامانه انبارداری<br />جمعیت هلال احمر کهگیلویه</h1>
+        <p class="lead">
+          نرم‌افزار دسکتاپ <strong>کاملاً آفلاین</strong> برای مدیریت انبار امدادی:
+          ورود و خروج، امانت، دپو، گزارش PDF/Excel، تقویم شمسی و رابط Enterprise با تم هلال احمر.
+        </p>
+        <div class="cta">
+          <a class="btn btn-primary" href="demo/">▶ مشاهده دموی UI</a>
+          <a class="btn btn-ghost" href="#contact">درخواست نسخه / استقرار</a>
+        </div>
+        <div class="lock-note">
+          کد منبع این محصول در مخزن <strong>خصوصی</strong> نگهداری می‌شود و در GitHub عمومی منتشر نشده است.
+          این صفحه و دمو فقط برای معرفی و ارزیابی ظاهر/قابلیت‌هاست.
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="assets/banner.jpg" alt="پیش‌نمایش بصری سامانه انبارداری" />
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <h2 class="section-title">قابلیت‌های کلیدی</h2>
+      <p class="section-sub">طراحی‌شده برای عملیات واقعی انبار امدادی — نه فقط یک CRUD ساده</p>
+      <div class="features">
+        <div class="feat"><div class="ico">📦</div><h3>مدیریت اقلام</h3><p>ثبت، ویرایش، موجودی، تاریخچه و هشدار کمبود با آستانه قابل تنظیم</p></div>
+        <div class="feat"><div class="ico">⬇⬆</div><h3>ورود و حواله</h3><p>ثبت ورودی و خروج با پیوست، چاپ رسمی و گردش کامل موجودی</p></div>
+        <div class="feat"><div class="ico">↻</div><h3>امانت و سررسید</h3><p>پیگیری امانت فعال، سررسید شده و بازگشت با اعلان</p></div>
+        <div class="feat"><div class="ico">⬡</div><h3>دپو و انتقال</h3><p>وضعیت قفل، انتقال جزئی و کامل بین دپو و انبار</p></div>
+        <div class="feat"><div class="ico">📊</div><h3>داشبورد و نمودار</h3><p>آمار لحظه‌ای، نمودار حواله ماهانه و ترکیب موجودی</p></div>
+        <div class="feat"><div class="ico">📄</div><h3>گزارش Excel / PDF</h3><p>خروجی حرفه‌ای با پشتیبانی کامل متن فارسی و راست‌چین</p></div>
+        <div class="feat"><div class="ico">📅</div><h3>تقویم شمسی</h3><p>تاریخ جلالی در کل سامانه — مناسب سازمان‌های ایرانی</p></div>
+        <div class="feat"><div class="ico">💾</div><h3>بکاپ خودکار</h3><p>پشتیبان‌گیری دوره‌ای از دیتابیس برای جلوگیری از از دست رفتن داده</p></div>
+        <div class="feat"><div class="ico">🌓</div><h3>تم روشن / تیره</h3><p>UI پریمیوم با پالت اختصاصی هلال احمر و حالت تاریک</p></div>
+      </div>
+      <div class="mock">
+        <img src="assets/dashboard-mockup.jpg" alt="موکاپ داشبورد" />
+      </div>
+    </div>
+  </section>
+
+  <section id="security">
+    <div class="wrap stack">
+      <div class="panel">
+        <h3>🔒 سیاست قفل سورس</h3>
+        <ul>
+          <li>مخزن <strong>عمومی</strong> فقط شامل معرفی، مجوز اختصاصی و دموی UI است</li>
+          <li>کد Python / PySide6 و منطق کسب‌وکار در مخزن <strong>Private</strong> است</li>
+          <li>هیچ فایل سورس، دیتابیس واقعی یا Credential منتشر نمی‌شود</li>
+          <li>بازتولید یا مهندسی معکوس بدون مجوز کتبی ممنوع است</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>🖥️ استقرار واقعی</h3>
+        <ul>
+          <li>اجرا روی Windows به‌صورت پرتابل (بدون نصب Python)</li>
+          <li>دیتابیس SQLite محلی — مناسب دفاتر بدون سرور</li>
+          <li>نقش‌ها: مدیر IT و انباردار با دسترسی جدا</li>
+          <li>بسته نصب/پرتابل فقط از طریق مالک نرم‌افزار</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack">
+    <div class="wrap">
+      <h2 class="section-title">معماری سطح‌بالا</h2>
+      <p class="section-sub">جزئیات پیاده‌سازی عمداً عمومی نیست — فقط لایه‌های منطقی</p>
+      <div class="panel">
+        <ul>
+          <li><strong>Desktop UI</strong> — رابط مدرن Enterprise با ناوبری سایدبار و صفحات ماژولار</li>
+          <li><strong>Application Services</strong> — احراز هویت، گزارش، چاپ، بکاپ</li>
+          <li><strong>Data Layer</strong> — مخازن داده روی SQLite آفلاین</li>
+          <li><strong>Distribution</strong> — بسته‌بندی اجرایی برای استقرار در اداره</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <h2 class="section-title" style="margin:0">درخواست دمو کامل یا استقرار</h2>
+          <p class="section-sub" style="margin:8px 0 0">توسعه‌دهنده: امدادگر عسکر نیرومند</p>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn btn-primary" href="tel:09331351329">📞 09331351329</a>
+          <a class="btn btn-ghost" href="https://github.com/askarniroomand" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-ghost" href="demo/">دموی وب UI</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div>© ۱۴۰۵ — سامانه انبارداری هلال احمر کهگیلویه · تمامی حقوق محفوظ است</div>
+      <div><a href="LICENSE">مجوز اختصاصی (Proprietary)</a> · <a href="SECURITY.md">امنیت</a></div>
+    </div>
+  </footer>
+</body>
+</html>

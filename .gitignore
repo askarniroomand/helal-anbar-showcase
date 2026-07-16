@@ -1,0 +1,23 @@
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# Never allow application source into this showcase repo
+*.py
+*.pyc
+__pycache__/
+venv/
+.venv/
+*.db
+*.spec
+requirements.txt
+app/
+main.py
+data/
+Backups/
+dist/
+build/
+*.zip
+*.exe

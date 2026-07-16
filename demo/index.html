@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>دمو تعاملی | سامانه انبارداری هلال احمر</title>
+  <meta name="description" content="نمایش تعاملی رابط کاربری سامانه مدیریت انبار امدادی — بدون دسترسی به سورس کد" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app" id="app">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true">✚</div>
+        <div class="brand-text">
+          <strong>هلال احمر</strong>
+          <span>کهگیلویه</span>
+        </div>
+      </div>
+      <nav class="nav" id="nav">
+        <button class="nav-item active" data-page="dashboard"><span class="ico">▣</span><span>داشبورد</span></button>
+        <button class="nav-item" data-page="items"><span class="ico">▤</span><span>مدیریت اقلام</span></button>
+        <button class="nav-item" data-page="warehouses"><span class="ico">⌂</span><span>انبارها</span></button>
+        <button class="nav-item" data-page="depot"><span class="ico">⬡</span><span>دپو</span></button>
+        <button class="nav-item" data-page="entry"><span class="ico">⬇</span><span>ثبت ورودی</span></button>
+        <button class="nav-item" data-page="dispatch"><span class="ico">⬆</span><span>ثبت خروج</span></button>
+        <button class="nav-item" data-page="loans"><span class="ico">↻</span><span>امانت</span></button>
+        <button class="nav-item" data-page="lists"><span class="ico">☰</span><span>لیست‌ها</span></button>
+        <button class="nav-item" data-page="reports"><span class="ico">📊</span><span>گزارش‌ها</span></button>
+        <button class="nav-item" data-page="settings"><span class="ico">⚙</span><span>تنظیمات</span></button>
+      </nav>
+      <div class="sidebar-foot">
+        <div class="user-chip">
+          <div class="avatar">ا</div>
+          <div>
+            <strong>انباردار</strong>
+            <span>نقش: انبار</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <header class="topbar">
+        <div class="crumbs">
+          <span class="muted">سامانه انبار امدادی</span>
+          <span class="sep">/</span>
+          <strong id="crumb">داشبورد</strong>
+        </div>
+        <div class="top-actions">
+          <div class="clock" id="clock">—</div>
+          <button class="icon-btn" id="themeToggle" title="تم روشن/تیره">◐</button>
+          <button class="icon-btn bell" title="اعلان‌ها">🔔<span class="badge">3</span></button>
+        </div>
+      </header>
+
+      <div class="content" id="content">
+        <!-- pages injected by JS -->
+      </div>
+
+      <footer class="demo-banner">
+        <span>🔒 این یک <strong>دموی رابط کاربری</strong> است — سورس نرم‌افزار منتشر نشده و خصوصی است.</span>
+        <a href="../index.html">بازگشت به صفحه معرفی</a>
+      </footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" hidden>نمونه اعلان — فقط نمایشی</div>
+  <script src="app.js"></script>
+</body>
+</html>
