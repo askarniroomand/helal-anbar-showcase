@@ -303,8 +303,12 @@ function bindPageEvents() {
 function showToast(msg) {
   toast.textContent = msg;
   toast.hidden = false;
+  toast.classList.add("show");
   clearTimeout(showToast._t);
-  showToast._t = setTimeout(() => { toast.hidden = true; }, 2600);
+  showToast._t = setTimeout(() => {
+    toast.classList.remove("show");
+    setTimeout(() => { toast.hidden = true; }, 250);
+  }, 2800);
 }
 
 document.getElementById("nav").addEventListener("click", (e) => {

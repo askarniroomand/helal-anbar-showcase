@@ -1,137 +1,174 @@
-# سامانه انبارداری هلال احمر — کهگیلویه
+<div align="center">
 
-<p align="center">
-  <img src="assets/banner.jpg" alt="Helal Anbar Banner" width="100%" />
-</p>
+<img src="assets/banner.jpg" alt="Helal Anbar" width="100%" />
 
-<p align="center">
-  <strong>نرم‌افزار دسکتاپ آفلاین مدیریت انبار امدادی</strong><br/>
-  جمعیت هلال احمر شهرستان کهگیلویه
-</p>
+<br/>
 
-<p align="center">
-  <a href="https://askarniroomand.github.io/helal-anbar-showcase/"><img src="https://img.shields.io/badge/Live_Site-معرفی-E31E24?style=for-the-badge" alt="Live" /></a>
-  <a href="https://askarniroomand.github.io/helal-anbar-showcase/demo/"><img src="https://img.shields.io/badge/Interactive_Demo-UI-1C1C22?style=for-the-badge" alt="Demo" /></a>
-  <img src="https://img.shields.io/badge/Source-Private_🔒-111111?style=for-the-badge" alt="Private Source" />
-  <img src="https://img.shields.io/badge/License-Proprietary-6B7280?style=for-the-badge" alt="License" />
-</p>
+# هلال‌انبار
 
----
+### سامانه انبارداری Enterprise · جمعیت هلال احمر کهگیلویه
 
-## ⚠️ این مخزن فقط Showcase است
+نرم‌افزار **دسکتاپ آفلاین** برای مدیریت انبار امدادی —  
+ورود · حواله · امانت · دپو · گزارش PDF/Excel · تقویم شمسی
 
-| چه چیزی اینجا هست | چه چیزی اینجا **نیست** |
-|---|---|
-| صفحه معرفی حرفه‌ای | ❌ کد منبع Python / PySide6 |
-| دموی تعاملی UI (HTML) | ❌ منطق کسب‌وکار و دیتابیس واقعی |
-| موکاپ و مستندات سطح‌بالا | ❌ Credential، بکاپ، یا فایل اجرایی کامل |
-| مجوز اختصاصی | ❌ لایسنس متن‌باز |
+<br/>
 
-> **سورس کامل نرم‌افزار در مخزن خصوصی نگهداری می‌شود** و به‌صورت عمومی در دسترس نیست.  
-> هدف این ریپو: معرفی محصول + نمایش دمو — نه انتشار کد.
+[![Live Site](https://img.shields.io/badge/🌐_Live_Site-Product_Page-E31E24?style=for-the-badge&labelColor=0B0B0E)](https://askarniroomand.github.io/helal-anbar-showcase/)
+[![Demo](https://img.shields.io/badge/▶_Interactive_Demo-UI_Preview-1C1C22?style=for-the-badge&labelColor=0B0B0E)](https://askarniroomand.github.io/helal-anbar-showcase/demo/)
+[![Source](https://img.shields.io/badge/🔒_Source-Private-111111?style=for-the-badge)](https://github.com/askarniroomand)
+[![License](https://img.shields.io/badge/License-Proprietary-6B7280?style=for-the-badge&labelColor=1F2937)](LICENSE)
 
----
-
-## ✨ قابلیت‌ها (محصول واقعی)
-
-- **مدیریت اقلام** — ثبت، ویرایش، موجودی، تاریخچه
-- **ورود و خروج (حواله)** — با پیوست و چاپ رسمی
-- **امانت** — پیگیری سررسید و بازگشت
-- **دپو** — قفل، انتقال جزئی / کامل
-- **انبارهای چندگانه** و اقلام ویژه (برگشتی، اسقاطی، مستعمل، اهدایی)
-- **داشبورد** با کارت آمار و نمودار
-- **گزارش Excel و PDF** با پشتیبانی کامل فارسی (RTL)
-- **تقویم شمسی** در کل سامانه
-- **بکاپ خودکار** ماهانه
-- **تم Light / Dark** با پالت هلال احمر
-- **نقش‌ها:** مدیر IT و انباردار
-
----
-
-## 🖥️ دموی رابط کاربری
-
-دموی وب فقط ظاهر و جریان UI را شبیه‌سازی می‌کند (بدون Backend):
-
-**[▶ باز کردن دموی تعاملی](https://askarniroomand.github.io/helal-anbar-showcase/demo/)**
-
-<p align="center">
-  <img src="assets/dashboard-mockup.jpg" alt="Dashboard mockup" width="90%" />
-</p>
-
----
-
-## 🏗️ معماری (سطح‌بالا — بدون جزئیات پیاده‌سازی)
+<br/>
 
 ```text
-┌─────────────────────────────────────────┐
-│           Desktop UI (RTL)              │
-│   Dashboard · Items · Entry · Dispatch  │
-│   Loans · Depot · Reports · Settings    │
-└──────────────────┬──────────────────────┘
-                   │
-┌──────────────────▼──────────────────────┐
-│         Application Services            │
-│     Auth · Report · Print · Backup      │
-└──────────────────┬──────────────────────┘
-                   │
-┌──────────────────▼──────────────────────┐
-│          Offline Data Layer             │
-│         SQLite · File Attachments       │
-└─────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────┐
+│  PUBLIC SHOWCASE                                         │
+│  Landing · Interactive UI Demo · Docs                    │
+│                                                          │
+│  SOURCE CODE → PRIVATE REPOSITORY ONLY  🔒               │
+└──────────────────────────────────────────────────────────┘
 ```
 
-جزئیات کد، schema و الگوریتم‌ها عمداً منتشر نمی‌شوند.
+</div>
 
 ---
 
-## 📦 استقرار (محصول واقعی)
+## این ریپو چیست؟
 
-| مورد | توضیح |
-|------|--------|
-| پلتفرم هدف | Windows 10/11 (بسته پرتابل) |
-| شبکه | **آفلاین** — بدون نیاز به اینترنت |
-| نصب | Extract و اجرا — بدون نصب Python برای کاربر نهایی |
-| داده | دیتابیس محلی کنار برنامه + پوشه بکاپ |
+| ✅ عمومی (همین‌جا) | 🔒 خصوصی (منتشر نشده) |
+|:---|:---|
+| لندینگ محصول | کد Python / PySide6 |
+| دموی تعاملی UI | منطق کسب‌وکار و schema |
+| موکاپ و بنر | بیلد / exe کامل |
+| مجوز اختصاصی | دیتابیس و credential |
 
-فایل اجرایی از طریق مالک نرم‌افزار ارائه می‌شود؛ در این ریپو قرار ندارد.
-
----
-
-## 🔐 امنیت و مالکیت
-
-- مجوز: **[Proprietary](LICENSE)** — همه حقوق محفوظ است
-- سیاست امنیتی: **[SECURITY.md](SECURITY.md)**
-- بازتولید، کپی UI به‌عنوان محصول مستقل، یا مهندسی معکوس بدون مجوز کتبی **ممنوع** است
+> **هدف:** معرفی حرفه‌ای محصول و نمایش ظاهر — **نه** انتشار سورس.
 
 ---
 
-## 📞 تماس / درخواست نسخه
+## قابلیت‌های محصول واقعی
+
+<table>
+<tr>
+<td width="50%">
+
+**عملیات انبار**
+- مدیریت اقلام و موجودی
+- ثبت ورودی + پیوست
+- حواله خروج + چاپ رسمی
+- امانت / سررسید / بازگشت
+- دپو (قفل · جزئی · کامل)
+
+</td>
+<td width="50%">
+
+**هوش و گزارش**
+- داشبورد + نمودار
+- هشدار کمبود موجودی
+- گزارش Excel و PDF فارسی
+- تقویم شمسی سراسری
+- بکاپ خودکار ماهانه
+
+</td>
+</tr>
+<tr>
+<td>
+
+**تجربه کاربری**
+- رابط Enterprise RTL
+- تم Light / Dark
+- نقش IT و انباردار
+
+</td>
+<td>
+
+**استقرار**
+- کاملاً آفلاین
+- Windows پرتابل
+- بدون نیاز به Python (کاربر)
+
+</td>
+</tr>
+</table>
+
+---
+
+## پیش‌نمایش
+
+<p align="center">
+  <img src="assets/dashboard-mockup.jpg" alt="Dashboard mockup" width="92%" />
+</p>
+
+<p align="center">
+  <a href="https://askarniroomand.github.io/helal-anbar-showcase/demo/"><strong>▶ باز کردن دموی تعاملی UI</strong></a>
+  &nbsp;·&nbsp;
+  <a href="https://askarniroomand.github.io/helal-anbar-showcase/"><strong>🌐 صفحه معرفی</strong></a>
+</p>
+
+---
+
+## معماری (سطح‌بالا)
+
+```text
+   ┌─────────────────────────────────────┐
+   │     Desktop UI  ·  RTL Enterprise   │
+   │  Dashboard · Inventory · Logistics  │
+   └──────────────────┬──────────────────┘
+                      │
+   ┌──────────────────▼──────────────────┐
+   │      Application Services           │
+   │   Auth · Report · Print · Backup    │
+   └──────────────────┬──────────────────┘
+                      │
+   ┌──────────────────▼──────────────────┐
+   │     Offline Data  ·  SQLite         │
+   └─────────────────────────────────────┘
+```
+
+جزئیات پیاده‌سازی عمداً منتشر نمی‌شود.
+
+---
+
+## امنیت و مالکیت
+
+- **مجوز:** [Proprietary](LICENSE) — همه حقوق محفوظ
+- **سیاست:** [SECURITY.md](SECURITY.md)
+- بازتولید محصول، کپی UI به‌عنوان نرم‌افزار مستقل، یا مهندسی معکوس **بدون مجوز کتبی ممنوع** است
+
+---
+
+## تماس / درخواست نسخه
 
 | | |
-|--|--|
+|:--|:--|
 | **توسعه‌دهنده** | امدادگر عسکر نیرومند |
-| **موبایل** | `09331351329` |
+| **تلفن** | `09331351329` |
 | **سازمان** | جمعیت هلال احمر شهرستان کهگیلویه |
+| **GitHub** | [@askarniroomand](https://github.com/askarniroomand) |
 
-برای درخواست **دمو کامل دسکتاپ**، استقرار در اداره، یا خرید/مجوز استفاده پیام دهید.
+برای **دمو کامل دسکتاپ**، استقرار در اداره، یا مجوز استفاده پیام دهید.
 
 ---
 
-## 📁 ساختار این ریپو (عمومی)
+## ساختار این ریپو
 
 ```text
 helal-anbar-showcase/
-├── index.html          # لندینگ معرفی
-├── demo/               # دموی تعاملی UI (HTML/CSS/JS)
-├── assets/             # بنر و موکاپ
+├── index.html          # لندینگ مدرن
+├── assets/             # استایل، اسکریپت، بنر
+├── demo/               # دموی UI تعاملی
 ├── docs/               # مستندات سطح‌بالا
-├── LICENSE             # مجوز اختصاصی
+├── LICENSE
 ├── SECURITY.md
 └── README.md
 ```
 
 ---
 
-<p align="center">
-  ساخته‌شده با دقت برای عملیات امدادی · © ۱۴۰۵ · تمامی حقوق محفوظ است
-</p>
+<div align="center">
+
+**ساخته‌شده برای عملیات امدادی** · © ۱۴۰۵ · Proprietary
+
+[Live Site](https://askarniroomand.github.io/helal-anbar-showcase/) · [Demo](https://askarniroomand.github.io/helal-anbar-showcase/demo/) · [License](LICENSE)
+
+</div>
